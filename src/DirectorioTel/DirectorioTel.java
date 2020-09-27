@@ -1,6 +1,5 @@
 package DirectorioTel;
 
-
 import java.util.*;
 
 public class DirectorioTel {
@@ -35,14 +34,27 @@ public class DirectorioTel {
         return salida;
     }
 
+    // PROFE LUIS, SI VE ESTO POR EL MENSAJE QUE LE MANDÉ. LO ACABO DE RESOLVER
+    // CON UN ITERADOR.PERO ABAJO LE DEJO COMENTADO EL MÉTODO ANTERIOR PARA
+    // QUE LO MIRE Y ME PUEDA DECIR POR QUÉ RAZÓN ESTÁ MAL. GRACIAS.
+    
     public void borrarCliente(long dni) {
-        for (Map.Entry<String, Cliente> entrada: clientes.entrySet()) {
-            if (entrada.getValue().getDni()==dni) {
-                clientes.remove(entrada.getKey());
+        Iterator<Map.Entry<String, Cliente>> it = clientes.entrySet().iterator();
+        while (it.hasNext()) {
+            if (it.next().getValue().getDni() == dni) {
+                it.remove();
             }
         }
     }
 
+//    public void borrarCliente(long dni) {
+//        for (Map.Entry<String, Cliente> entrada: clientes.entrySet()) {
+//            if (entrada.getValue().getDni()==dni) {
+//                clientes.remove(entrada.getKey());
+//            }
+//        }
+//    }
+    
     
     public Map<String, Cliente> getClientes() {
         return clientes;
