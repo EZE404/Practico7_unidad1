@@ -32,6 +32,7 @@ public class Main {
         
         
         // CONSULTANDO DESPUÉS DE HABER BORRADO
+        System.out.println("------- Estado final del directorio -------");
         for (Map.Entry<String, Cliente> cliente: dir.getClientes().entrySet()) {
             String tel=cliente.getKey();
             Cliente propietario=cliente.getValue();
